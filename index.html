@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dana Kaget</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/images/image-title.jpg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <video autoplay muted loop>
+        <source src="assets/videos/video2.mp4" type="video/mp4">
+    </video>
+    <center>
+        <div class="marquee header cta">
+            <p>FCFS GAYS ! ! ! YANG GADAPAT MATI AJA</p>
+        </div>
+    </center>
+
+    <center>
+        <div class="footer">
+            <img class="img" src="assets/images/img1.jpg">
+            <p>Quiz Dana Kaget</p>
+            <button id="btn">Click</button>
+            <span style="color: white;" onclick="btnSound()" id="volumeOn" class="material-symbols-outlined snd">
+                volume_up
+            </span>
+            <span style="color: white;" onclick="btnSound()" id="volumeOff" class="material-symbols-outlined snd">volume_off</span>
+            
+
+        </div>
+    </center>
+
+
+    <div id="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p id="loading-text">LOADING...</p>
+    </div>
+
+    <audio id="sound" loop>
+        <source src="assets/audios/audio.mp3">
+    </audio>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function () {
+            document.getElementById("loading").style.display = "flex"; // Tampilkan loading
+
+            setTimeout(function () {
+                window.location.href = "quiz.html"; // Pindah halaman setelah 3 detik
+            }, 3000);
+        });
+
+        let sound = document.getElementById('sound');
+        let volumeOff = document.getElementById('volumeOff');
+        let volumeOn = document.getElementById('volumeOn');
+
+        volumeOff.style.display = "none"
+
+        function btnSound() {
+            if (sound.paused) {
+                sound.play()
+                volumeOff.style.display = "inline-block"
+                volumeOn.style.display = "none";
+                
+            }
+            else {
+                sound.pause()
+                volumeOn.style.display = "inline-block";
+                volumeOff.style.display = "none"
+
+            }
+        }
+    </script>
+</body>
+
+</html>
